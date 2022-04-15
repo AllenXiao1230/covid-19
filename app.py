@@ -12,10 +12,13 @@ def lineNotifyMessage(token, msg):
     r = requests.post("https://notify-api.line.me/api/notify", headers = headers, params = payload)
     return r.status_code
 
-line_msg=diagnosed_people('https://covid-19.nchc.org.tw/dt_005-covidTable_taiwan.php')
+
 
 if __name__ == "__main__":
+  line_msg=diagnosed_people('https://covid-19.nchc.org.tw/dt_005-covidTable_taiwan.php')
   total_people=line_msg[0]
-  token = 'M8OZJMmL5p6BSOiBJZMt6f9gH4seLahLBF7GEIzXWvW'
+  token_e9 = 'M8OZJMmL5p6BSOiBJZMt6f9gH4seLahLBF7GEIzXWvW'
+  token_me = 'UINKkQgYr1tpwBT3W9Klw1kmZZO8xG8GTXQ1jyETPxn'
   message = str(line_msg)  
-  lineNotifyMessage(token, message)
+  lineNotifyMessage(token_e9, message)
+  lineNotifyMessage(token_me, message)
