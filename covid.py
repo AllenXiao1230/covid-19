@@ -1,4 +1,4 @@
-from tkinter.ttk import Style
+
 from bs4 import BeautifulSoup
 import requests
 import cfscrape
