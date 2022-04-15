@@ -1,26 +1,19 @@
+from tkinter.ttk import Style
 from bs4 import BeautifulSoup
 import requests
 import cfscrape
 import re
 
-
 emoji_list={'0':'0️⃣','1':'1️⃣','2':'2️⃣','3':'3️⃣','4':'4️⃣','5':'5️⃣','6':'6️⃣','7':'7️⃣','8':'8️⃣','9':'9️⃣',',':''}
-
-emoji_list={0:'0️⃣',1:'1️⃣',2:'2️⃣',3:'3️⃣',4:'4️⃣',5:'5️⃣',6:'6️⃣',7:'7️⃣',8:'8️⃣',9:'9️⃣'}
-
 
 def diagnosed_people(url):
   headers = {
 "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36", #使用者代理
 "Referer": "https://www.google.com/"  #參照位址
 } 
-
-  proxie = { 'http' : 'http://211.72.89.27:80'}
-
-
   scraper = cfscrape.create_scraper()
 
-  response = scraper.get(f"{url}" ,headers=headers,proxies=proxie)
+  response = scraper.get(f"{url}" ,headers=headers)
  
 # HTML原始碼解析
   soup = BeautifulSoup(response.text, "html.parser")
@@ -35,7 +28,6 @@ def diagnosed_people(url):
     
   
 
-
   local0 = soup.find_all("span", class_="country_confirmed_percent")
   local=str(local0[1]).strip(' <span class="country_confirmed_percent"><small>/本土病例 ')
 
@@ -46,14 +38,6 @@ def diagnosed_people(url):
 
   
   update_time=str(soup.find("span", style="font-size: 0.8em; color: #333333; font-weight: 500;").text).replace('Updatedon','')
-
-
-  LID_list = soup.find_all("div", class_="num _small")
-  print(response.text)
-  update_time=str(soup.find("div", class_="sub")).strip('[<div class="num _big _red</div>]')  
-  local=str(LID_list[0]).strip('[<div class="num _big _red</div>]')
-  imported=str(LID_list[1]).strip('[<div class="num _big _red</div>]')
-  dead=str(LID_list[2]).strip('[<divclass="num _big _red</div>]')
 
   local1=''
   imported1=''
@@ -81,5 +65,3 @@ def diagnosed_people(url):
   
   return msg
   
-
-
