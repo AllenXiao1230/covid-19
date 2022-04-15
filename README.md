@@ -9,7 +9,7 @@ Hi,今天來分享我寫的小程式，他可以取得每天的確診人數，�
 3. 取得我為你撰寫的程式碼
 4. 修改程式碼裡的參數
 5. Push到Heroku的伺服器
-6. [設定定時觸發程序](https://github.com/AllenXiao1230/covid-19/edit/main/README.md#6-)
+6. [設定定時觸發程序](https://github.com/AllenXiao1230/covid-19/blob/main/README.md#6-%E8%A8%AD%E5%AE%9A%E5%AE%9A%E6%99%82%E8%A7%B8%E7%99%BC%E7%A8%8B%E5%BA%8F)
 
 ### 1. 建立一個Line Notify
 ### 2. 建立一個Heroku App
