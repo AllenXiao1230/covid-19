@@ -1,5 +1,22 @@
 # 讓Line Notify來告訴你今天的確診人數
-使用Python爬蟲，並推播到Line Notify
+* 使用Python爬蟲，並推播到Line Notify
+
+Hi,今天來分享我寫的小程式，他可以取得每天的確診人數，並且推播的個人或群組，聽起來很方便吧！跟著我，帶著你一步步設定😎
+
+### 下面是我們的步驟
+1. 建立一個Line Notify
+2. 建立一個Heroku App
+3. 取得我為你撰寫的程式碼
+4. 修改程式碼裡的參數
+5. Push到Heroku的伺服器
+6. [設定定時觸發程序](https://github.com/AllenXiao1230/covid-19/edit/main/README.md#6-)
+
+### 1. 建立一個Line Notify
+### 2. 建立一個Heroku App
+### 3. 取得我為你撰寫的程式碼
+### 4. 修改程式碼裡的參數
+### 5. Push到Heroku的伺服器
+### <p id =“6”>6. 設定定時觸發程序</p>
 
 ### App.py
       from covid import *
