@@ -1,6 +1,6 @@
 from covid import *
 import requests
-
+from datetime import datetime,timezone,timedelta
 def lineNotifyMessage(token, msg):
 
     headers = {
@@ -19,5 +19,13 @@ if __name__ == "__main__":
     token_e9 = 'M8OZJMmL5p6BSOiBJZMt6f9gH4seLahLBF7GEIzXWvW'      #定義Line Notify的token
     token_me = 'UINKkQgYr1tpwBT3W9Klw1kmZZO8xG8GTXQ1jyETPxn'      #定義Line Notify的token
 
-    lineNotifyMessage(token_e9, line_msg)       #發送Line Notify
-    lineNotifyMessage(token_me, line_msg)       #發送Line Notify
+    #lineNotifyMessage(token_e9, line_msg)       #發送Line Notify
+           #發送Line Notify
+    
+      
+    dt1 = datetime.utcnow().replace(tzinfo=timezone.utc)
+    dt2 = dt1.astimezone(timezone(timedelta(hours=8))) # 轉換時區 -> 東八區
+
+    if dt2.strftime("%M")=='25':
+        print('run')
+        lineNotifyMessage(token_me, line_msg)
