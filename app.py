@@ -26,6 +26,6 @@ if __name__ == "__main__":
     dt1 = datetime.utcnow().replace(tzinfo=timezone.utc)
     dt2 = dt1.astimezone(timezone(timedelta(hours=8))) # 轉換時區 -> 東八區
 
-    if dt2.strftime("%H")=='14' and dt2.strftime("%M")<='30':
+    if dt2.strftime("%H")=='14' and '35'>=dt2.strftime("%M")>='25':
         print('run')
         lineNotifyMessage(token_me, line_msg)
