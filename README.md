@@ -19,6 +19,7 @@ Hi,今天來分享我寫的小程式，他可以取得每天的確診人數，�
 ### <p id =“6”>6. 設定定時觸發程序</p>
 
 ### App.py
+```
       from covid import *
       import requests
 
@@ -42,4 +43,5 @@ Hi,今天來分享我寫的小程式，他可以取得每天的確診人數，�
 
       lineNotifyMessage(token_e9, line_msg)       #發送Line Notify
       lineNotifyMessage(token_me, line_msg)       #發送Line Notify
+      ```
 ---
